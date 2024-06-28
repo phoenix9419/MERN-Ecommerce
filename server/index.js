@@ -26,6 +26,10 @@ setupDB();
 require('./config/passport')(app);
 app.use(routes);
 
+app.get("*",(req, res)=>{
+  res.send(`<p style="font-size:100px"> Hello &#128018; Plz Check Your URL</p>`)
+})
+
 const server = app.listen(port, () => {
   console.log(
     `${chalk.green('✓')} ${chalk.blue(
